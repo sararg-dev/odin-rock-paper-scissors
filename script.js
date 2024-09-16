@@ -1,5 +1,6 @@
+const choices = ["Rock", "Paper", "Scissors"];
+
 function getComputerChoice() {
-  const choices = ["Rock", "Paper", "Scissors"];
 
   // get random number between 0 and 2
   const min = 0;
@@ -11,4 +12,20 @@ function getComputerChoice() {
   return console.log(choices[random]);
 }
 
-getComputerChoice();
+function getHumanChoice() {
+
+    let user_choice = prompt("Pick (enter a number): \n - 1 for ROCK \n - 2 for PAPER \n - 3 for SCISSORS");
+
+    // validate the user prompt
+    if(isNaN(user_choice)) {
+        return console.log("Please, choose between 1, 2 or 3");
+    }
+
+    if (user_choice != 1 && user_choice != 2 && user_choice != 3) {
+        return console.log("Please, choose between 1, 2 or 3");
+    }
+
+    return console.log(choices[user_choice - 1]);
+}
+
+getHumanChoice();
